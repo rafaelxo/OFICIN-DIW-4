@@ -4,12 +4,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu site</title>
+  <title>Lista de Cidades</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <ul id="ulCidades"></ul>
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333333;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .city-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .city-item {
+      margin: 10px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .city-item:hover {
+      background-color: #e3f2fd;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .city-link {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .city-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <div class="container">
+    <h1>Lista de Cidades</h1>
+    <ul id="ulCidades" class="city-list"></ul>
+  </div>
 
   <script src="app.js"></script>
 
@@ -23,8 +103,8 @@
       console.log("index.html:\n" + cidades)
       for (let i = 0; i < cidades.length; i++) {
         let cidade = cidades[i];
-        strTextoHTML += `<li>
-                            <a href="detalhes.html?id=${cidade.id}">
+        strTextoHTML += `<li class="city-item">
+                            <a href="detalhes.html?id=${cidade.id}" class="city-link">
                                 ${cidade.cidade} - ${cidade.estado} 
                             </a>
                          </li>`;

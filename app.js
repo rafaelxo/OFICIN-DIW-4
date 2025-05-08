@@ -3,21 +3,51 @@
  * 1) node.js (https://nodejs.org/en)
  * 2) npm install -g json-server
  * 3) Na raiz do projeto, criar "db/db.json":
- {
-    "cidades": [
-      {"id": 1, "cidade": "Belo Horizonte", "estado": "MG", "população": 3800000},
-      {"id": 2, "cidade": "São Paulo", "estado": "SP", "população": 11800000},
-      {"id": 3, "cidade": "Rio de Janeiro", "estado": "RJ", "população": 5300000},
-      {"id": 4, "cidade": "Curitiba", "estado": "PR", "população": 1200000},
-      {"id": 5, "cidade": "Fortaleza", "estado": "CE", "população": 2100000}
-    ]
-  }
+{
+  "cidades": [
+    {
+      "id": 1,
+      "img": "img/be.png",
+      "cidade": "Belo Horizonte",
+      "estado": "MG",
+      "populacao": 3800000
+    },
+    {
+      "id": 2,
+      "img": "img/sa.png",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "populacao": 11800000
+    },
+    {
+      "id": 3,
+      "img": "img/ri.png",
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ",
+      "populacao": 5300000
+    },
+    {
+      "id": 4,
+      "img": "img/cu.png",
+      "cidade": "Curitiba",
+      "estado": "PR",
+      "populacao": 1200000
+    },
+    {
+      "id": 5,
+      "img": "img/fo.png",
+      "cidade": "Fortaleza",
+      "estado": "CE",
+      "populacao": 2100000
+    }
+  ]
+}
  *  
  * Para rodar, executar o comando abaixo:
  * 4) json-server --watch db/db.json --port 3333
 */
 
-const url = "https://9184a615-58dc-476b-9b6b-37318556498e-00-2bnic1duw2m7u.picard.replit.dev";
+const url = "https://840e3b36-3b07-447d-8dbe-779690c03fdd-00-1wprorg80se1x.worf.replit.dev";
 const urlCidades = url + "/cidades"; 
 console.log(urlCidades);
 let cidades = [];
